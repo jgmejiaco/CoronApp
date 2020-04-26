@@ -1,0 +1,149 @@
+<html lang="es">
+  <head>
+    <title>Encuesta Riesgo de Contagio Coronavirus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <!-- ***************************INICIO HEADER****************************************** -->  
+    <header class="topnav">
+      <img class="logo" src="./img/logo-JGMC.jpg" alt="">
+      <nav class="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#">Reciclaje</a>
+        <a href="#">Reportes</a>
+        <a href="#">Configuración</a>
+        <a class="icon" href="#"><span class="fa fa-bars"></span></a>
+      </nav>
+    </header>
+    <!-- *****************************FIN HEADER****************************************** -->
+
+
+
+    <!-- *****************************INICIO SECCIÓN PPAL*************************************** -->
+    <main>
+      <h1 class="namePage">Probabilidad de contagio en Colombia</h1>
+      <!-- Inicio descripción encuesta -->
+      <article class="box">
+        <p>
+          Mediante esta encuesta podras identificar la probabilidad de contagio
+          de SARS-CoV-2 (Coronavirus)
+        </p>
+      </article>
+      <!-- Fin descripción encuesta -->
+      
+      <!-- *************** Fin datos ****************** -->
+      <section class="mainSection">
+      <section class="horizontal">
+        <article class="vertical box form-container">
+          <form action="" id="formularioProbabilidad">
+            <h4 class="header-tiitle">Ingresa tus datos:</h4>
+            <ul>
+              <li class="question">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" name="nombre" id="nombre" required />
+              </li>
+              <li class="question">
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" required/>
+              </li>
+              <li class="question">
+                <label>Departamento: </label>
+                <input list="datalist-departamentos" name="departamento" placeholder="selecciona tu departamento" type="datalist" required/>
+                <datalist id="datalist-departamentos"> </datalist>
+              </li>
+              <li class="question">
+                <label for="salidas">¿Cuantas veces salío usted o algún integrante de su familia el último mes?</label>
+                <input name="salidas" type="radio" required value="ninguna" />Ninguno salió<br/>
+                <input name="salidas" type="radio" value="1 a 3" /> 1 a 3 veces<br />
+                <input name="salidas" type="radio" value="4 a 10" /> 4 a 10 veces <br/>
+                <input name="salidas" type="radio" value="mas de 10" /> 10 o más veces <br/>
+              </li>
+              <div class="content-right">
+                <button class="button"  type="submit" id="calular-probabilidad">Calcular</button>
+              </div>
+            </ul>
+          </form>
+        </article>
+
+        <!-- *************** Inicio resultados de datos ****************** -->
+        <article class="box results" id="results">
+          <h4 class="header-tiitle">Resultados con los datos suministrados:</h4>
+          <br/>
+          <p>Su probabilidad de contagio es de:</p>
+          <p class="center">
+            <span class="big-text-6" id="probabilidad">%</span>
+          </p>
+          <p id="mensaje"></p>
+          <div id="estadisticas-resultados" class="center"></div>
+        </article>
+        <!-- *************** Fin resultados de datos ****************** -->
+      </section>
+
+      <section class="horizontal">
+        <article class="box center margin-bottom results" id="estadisticas">
+          <h4 class="header-tiitle">Las estadisticas en Colombia al dia de hoy:</h4>
+          <p>Cantidad de contagiados:</p>
+          <span class="big-text-3" id="total"></span>
+          <p>Genero:</p>
+          <p>
+            <i class="fa fa-male big-text-2"></i>
+            <span class="big-text-3" id="hombres"></span>
+            <i class="fa fa-female big-text-2"></i>
+            <span class="big-text-3" id="mujeres"></span>
+          </p>
+          <span class="big-text-3"></span>
+          <p>Personas Recuperadas:</p>
+          <span class="big-text-3" id="recuperados"></span>
+          <p>Muertes:</p>
+          <span class="big-text-3" id="muertes"></span>
+          <p>Muertes Menores de 50 años:</p>
+          <span class="big-text-3" id="muertes-menores-50"></span>
+        </article>
+      
+        <article class="box chart results" id="grafica">
+          <h4 class="header-tiitle">Curva de contagio</h4>
+          <label>Comparar curva con: </label>
+          <input list="datalist-paises" type="datalist" name="pais-comparacion" placeholder="Seleccione un país"/>
+          <datalist id="datalist-paises"> </datalist>
+          <div class="ct-chart ct-perfect-fourth chart"></div>
+          <p class="content-right">
+            <small class="ct-series-a">Casos en Colombia</small>
+            <small class="ct-series-b">Pais comparado</small>
+          </p>
+        </article>
+        </section>
+      </section>
+      <!-- *************** Fin datos ****************** -->
+    </main>
+
+    <!-- *************** Inicio Videos ****************** -->
+    <section class="container-audio-video" id="audio-video"> <!-- Pendiente por crear función en Javascript -->
+        <div class="container-audio">
+            <audio class="audio" autoplay src="http://media.w3.org/2010/05/sound/sound_5.mp3" controls>
+              
+            </audio>
+        </div>
+
+        <div class="container-video">
+            <video class="video" muted autoplay controls width="400" height="200" poster="./img/Logo-JGMC.jpg" src="http://media.w3.org/2010/05/bunny/trailer.mp4"  type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <!-- *************** Fin Videos ****************** -->
+    <!-- *****************************FIN SECCIÓN PPAL*************************************** -->
+    <footer>
+      2020 © Encuesta Riesgo de Contagio Coronavirus por
+      <a target="_blank" href="https://www.linkedin.com/in/juan-guillermo-mej%C3%ADa-2838a3161/">Juan Guillermo Mejía</a>
+      de
+      <a target="_blank" href="https://jgmcdigital.com">JGMC DIGITAL<sup>®</sup></a>
+    </footer>
+    <!-- *********************************************** -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
