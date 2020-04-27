@@ -123,7 +123,7 @@
     <!-- *************** Inicio Videos ****************** -->
     <section class="container-audio-video" id="audio-video"> <!-- Pendiente por crear función en Javascript -->
         <div class="container-audio">
-            <audio class="audio" autoplay src="http://media.w3.org/2010/05/sound/sound_5.mp3" controls>
+            <audio class="audio" autoplay muted src="http://media.w3.org/2010/05/sound/sound_5.mp3" controls>
               
             </audio>
         </div>
@@ -135,6 +135,27 @@
     </section>
     <!-- *************** Fin Videos ****************** -->
     <!-- *****************************FIN SECCIÓN PPAL*************************************** -->
+
+    
+    <section id="reproductor">
+      <video id="medio" width="720" height="400">
+        <source src="http://media.w3.org/2010/05/bunny/trailer.mp4">
+      </video>
+      
+      <nav>
+        <div id="botones">
+          <button type="button" id="reproducir">Reproducir</button>
+        </div>
+        
+        <div id="barra">
+          <div id="progreso"></div>
+        </div>
+        
+        <div style="clear: both"></div>
+      </nav>
+    </section>
+
+      <!-- ************************************************* -->
     <footer>
       2020 © Encuesta Riesgo de Contagio Coronavirus por
       <a target="_blank" href="https://www.linkedin.com/in/juan-guillermo-mej%C3%ADa-2838a3161/">Juan Guillermo Mejía</a>
@@ -145,5 +166,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js"></script>
     <script src="js/index.js"></script>
+
   </body>
 </html>
